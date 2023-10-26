@@ -17,42 +17,42 @@ void EfficiencyPurity(const int p){
 	const int HLTRIGGER = 12;
 	gStyle->SetOptStat(0);
 	gStyle->SetCanvasPreferGL(true);
-	string tree;
+	string tree, inputFile_pp, inputFile_fw;
 	string classStudy = "";
 	if (p==0) {
 		tree = "trackAna/ParticleTree";
-		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_DF_ppRec_MC_HIRun2023_2023_10_24.root";
-		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_DF_fwRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_DF_ppRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_DF_fwRec_MC_HIRun2023_2023_10_24.root";
 		classStudy = "DF_trak";
 	}
 	else if (p==1) {
 		tree = "muonAna/ParticleTree";
-		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_mu_ppRec_MC_HIRun2023_2023_10_24.root";
-		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_mu_fwRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_mu_ppRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_mu_fwRec_MC_HIRun2023_2023_10_24.root";
 		classStudy = "QED_mu";
 	}
 	else if (p==2) {
 		tree = "elecAna/ParticleTree";
-		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_ppRec_MC_HIRun2023_2023_10_24.root";
-		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_fwRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_ppRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_fwRec_MC_HIRun2023_2023_10_24.root";
 		classStudy = "QED_el";
 	}
 	else if (p==3) {
 		tree = "lowPtElecAna/ParticleTree";
-		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_ppRec_MC_HIRun2023_2023_10_24.root";
-		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_fwRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_ppRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/STARLIGHT_5p36TeV_2023Run3/ParticleAnalyzer_QED_el_fwRec_MC_HIRun2023_2023_10_24.root";
 		classStudy = "QED_LowpTel";
 	}
 	else if (p==4) {
 		tree = "phoAna/ParticleTree";
-		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_LbL_ppRec_MC_HIRun2023_2023_10_24.root";
-		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_LbL_fwRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_LbL_ppRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_LbL_fwRec_MC_HIRun2023_2023_10_24.root";
 		classStudy = "photon";
 	}
 	else if (p==5) {
 		tree = "convAna/ParticleTree";
-		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_ChiC_ppRec_MC_HIRun2023_2023_10_24.root";
-		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_ChiC_fwRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_pp = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_ChiC_ppRec_MC_HIRun2023_2023_10_24.root";
+		inputFile_fw = "/eos/cms/store/group/phys_heavyions/anstahll/CERN/PbPb2023/ParticleAnalyzer/MC/2023_10_24/SUPERCHIC_5p36TeV_2023Run3/ParticleAnalyzer_ChiC_fwRec_MC_HIRun2023_2023_10_24.root";
 		classStudy = "conversion";
 	}
 
@@ -262,7 +262,7 @@ void EfficiencyPurity(const int p){
 	c1->cd(4);
 	effpTeta2->Draw("colz");
 	
-	TFile* output = new TFile(Form("outputEff_%s.root",classStudy.c_str() ,"recreate");
+	TFile* output = new TFile(Form("outputEff_%s.root",classStudy.c_str()) ,"recreate");
 	output->cd();
 	c1->Write();
 	effpT1->Write();
