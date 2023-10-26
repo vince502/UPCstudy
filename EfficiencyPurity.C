@@ -6,7 +6,7 @@
 #include "TH1D.h"
 #include "ROOT/TSeq.hxx"
 #include <vector>
-#include "../info.h"
+#include "info.h"
 #include "treeIO.h"
 #include "histStyler.h"
 #include "TEfficiency.h"
